@@ -29,21 +29,19 @@
                             <tr>
                                 <th>Sl</th>
                                 <th>Name</th>
-                                <th>Mobile Number</th>
+                                <th>Customer Image</th>
                                 <th>Email</th>
                                 <th>Address</th>
                                 <th>Action</th>
 
                             </thead>
 
-
                             <tbody>
-
                                 @foreach($customer as $key => $item)
                             <tr>
                                 <td> {{ $key+1}} </td>
                                 <td> {{ $item->name }} </td>
-                                <td> {{ $item->mobile_no }} </td>
+                                <td> <img src="{{ asset( $item->customer_image ) }}" style="width:60px; height:50px">  </td>
                                 <td> {{ $item->email }} </td>
                                 <td> {{ $item->address }} </td>
                                 <td>
