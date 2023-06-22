@@ -10,15 +10,15 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Add Supplier Page </h4><br><br>
+                        <h4 class="card-title">Add Customer Page </h4><br><br>
 
 
 
-                        <form method="post" action="{{ route('supplier.store') }}" id="myForm" >
+                        <form method="post" action="{{ route('customer.store') }}" id="myForm" >
                             @csrf
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Name </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">Customer Name </label>
                             <div class="form-group col-sm-10">
                                 <input name="name" class="form-control" type="text"    >
                             </div>
@@ -27,7 +27,7 @@
 
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Mobile </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">Customer Mobile </label>
                             <div class="form-group col-sm-10">
                                 <input name="mobile_no" class="form-control" type="text"    >
                             </div>
@@ -36,7 +36,7 @@
 
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Email </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">Customer Email </label>
                             <div class="form-group col-sm-10">
                                 <input name="email" class="form-control" type="email"  >
                             </div>
@@ -45,7 +45,7 @@
 
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Address </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">Customer Address </label>
                             <div class="form-group col-sm-10">
                                 <input name="address" class="form-control" type="text"  >
                             </div>

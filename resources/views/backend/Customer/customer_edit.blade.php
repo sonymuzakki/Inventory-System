@@ -10,42 +10,42 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Add Supplier Page </h4><br><br>
+                        <h4 class="card-title">Add customer Page </h4><br><br>
 
-                        <form method="post" action="{{ route('supplier.update',$supplier->id) }}" id="myForm" >
+                        <form method="post" action="{{ route('customer.update',$customer->id) }}" id="myForm" >
                             @csrf
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Name </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">customer Name </label>
                             <div class="form-group col-sm-10">
-                                <input name="name" class="form-control" type="text" value="{{ $supplier->name }}"   >
+                                <input name="name" class="form-control" type="text" value="{{ $customer->name }}"   >
                             </div>
                         </div>
                         <!-- end row -->
 
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Mobile </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">customer Mobile </label>
                             <div class="form-group col-sm-10">
-                                <input name="mobile_no" class="form-control" type="text" value="{{ $supplier->mobile_no }}"   >
+                                <input name="mobile_no" class="form-control" type="text" value="{{ $customer->mobile_no }}"   >
                             </div>
                         </div>
                         <!-- end row -->
 
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Email </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">customer Email </label>
                             <div class="form-group col-sm-10">
-                                <input name="email" class="form-control" type="email" value="{{ $supplier->email }}"  >
+                                <input name="email" class="form-control" type="email" value="{{ $customer->email }}"  >
                             </div>
                         </div>
                         <!-- end row -->
 
 
                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Address </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">customer Address </label>
                             <div class="form-group col-sm-10">
-                                <input name="address" class="form-control" type="text" value="{{ $supplier->address }}" >
+                                <input name="address" class="form-control" type="text" value="{{ $customer->address }}" >
                             </div>
                         </div>
                         <!-- end row -->

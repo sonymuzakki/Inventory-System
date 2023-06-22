@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Pos;
 
-use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -22,4 +24,23 @@ class CustomerController extends Controller
         $customer = Customer::findOrFail($id);
         return view('backend.Customer.customer_edit', compact('customer'));
     }
+
+    public function CustomerStore(Request $request){
+        // dd($request);
+        Customer::insert([
+            'name' => $request->name,
+            'mobile_no' => $request->mobile_no,
+            'email' => $request->email,
+            'address' => $request->address,
+            'created_by' => Auth::user()->id,
+            'address' => Carbon::now(),
+        ]);
+
+        $notification = array(
+            'message' => 'Customer Inserted Success',
+            'alert-type' => 'success',
+        );
+        return redirect()->route('customer.all')->with($notification);
+    }
+
 }
