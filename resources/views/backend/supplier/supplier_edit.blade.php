@@ -12,8 +12,11 @@
 
                         <h4 class="card-title">Add Supplier Page </h4><br><br>
 
-                        <form method="post" action="{{ route('supplier.update',$supplier->id) }}" id="myForm" >
+                        <form method="post" action="{{ route('supplier.update') }}" id="myForm" >
                             @csrf
+
+                        <input type="hidden" name="id" value="{{ $supplier->id }}">
+
 
                         <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Supplier Name </label>

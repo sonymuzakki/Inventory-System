@@ -43,4 +43,34 @@ class CustomerController extends Controller
         return redirect()->route('customer.all')->with($notification);
     }
 
+    public function CustomerUpdate(Request $request){
+        $customer_id = $request->id;
+
+        Customer::findOrFail($customer_id)->update([
+            'name' => $request->name,
+            'mobile_no' => $request->mobile_no,
+            'email' => $request->email,
+            'address' => $request->address,
+            'updated_by' => Auth::user()->id,
+            'updated_at' => Carbon::now(),
+        ]);
+        $notification = array(
+            'message' => 'Supplier Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('customer.all')->with($notification);
+
+    } // End Method
+    public function CustomerDelete($id){
+        Customer::findOrFail($id)->delete();
+
+         $notification = array(
+              'message' => 'Customer Deleted Successfully',
+              'alert-type' => 'success'
+          );
+
+          return redirect()->back()->with($notification);
+
+      }
 }

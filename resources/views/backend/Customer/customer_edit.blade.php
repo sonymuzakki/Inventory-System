@@ -12,8 +12,10 @@
 
                         <h4 class="card-title">Add customer Page </h4><br><br>
 
-                        <form method="post" action="{{ route('customer.update',$customer->id) }}" id="myForm" >
+                        <form method="post" action="{{ route('customer.update') }}" id="myForm" >
                             @csrf
+
+                            <input type="hidden" name="id" value="{{ $customer->id }}">
 
                         <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">customer Name </label>
