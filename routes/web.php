@@ -6,7 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Models\Supplier;
 use App\Http\Controllers\Pos\SupplierController;
-
+use App\Http\Controllers\Pos\UnitsController;
 
 // Admin All Route
 Route::controller(AdminController::class)->group(function () {
@@ -39,6 +39,17 @@ Route::controller(CustomerController::class)->group(function () {
     Route::get('/Customer/edit/{id}', 'CustomerEdit')->name('customer.edit');
     Route::post('/Customer/update', 'CustomerUpdate')->name('customer.update');
     Route::get('/Customer/delete/{id}', 'CustomerDelete')->name('customer.delete');
+
+});
+
+// unit All Route
+Route::controller(UnitsController::class)->group(function () {
+    Route::get('/unit/All', 'UnitAll')->name('unit.all');
+    Route::get('/unit/Add', 'UnitAdd')->name('unit.add');
+    Route::post('/unit/store', 'UnitStore')->name('unit.store');
+    Route::get('/unit/edit/{id}', 'UnitEdit')->name('unit.edit');
+    Route::post('/unit/update', 'UnitUpdate')->name('unit.update');
+    Route::get('/unit/delete/{id}', 'UnitDelete')->name('unit.delete');
 
 });
 
