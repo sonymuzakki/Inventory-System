@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\ProductController;
+use App\Http\Controllers\Pos\PurchasesController;
 use App\Models\Supplier;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\Pos\UnitsController;
@@ -66,7 +67,7 @@ Route::controller(CategoryController::class)->group(function () {
 
 });
 
-// Catergory All Route
+// Product All Route
 Route::controller(ProductController::class)->group(function () {
     Route::get('/product/All', 'productAll')->name('product.all');
     Route::get('/product/Add', 'productAdd')->name('product.add');
@@ -74,6 +75,17 @@ Route::controller(ProductController::class)->group(function () {
     Route::get('/product/edit/{id}', 'productEdit')->name('product.edit');
     Route::post('/product/update', 'productUpdate')->name('product.update');
     Route::get('/product/delete/{id}', 'productDelete')->name('product.delete');
+
+});
+
+// Product All Route
+Route::controller(PurchasesController::class)->group(function () {
+    Route::get('/purchases/All', 'purchasesAll')->name('purchases.all');
+    Route::get('/purchases/Add', 'purchasesAdd')->name('purchases.add');
+    Route::post('/purchases/store', 'purchasesStore')->name('purchases.store');
+    Route::get('/purchases/edit/{id}', 'purchasesEdit')->name('purchases.edit');
+    Route::post('/purchases/update', 'purchasesUpdate')->name('purchases.update');
+    Route::get('/purchases/delete/{id}', 'purchasesDelete')->name('purchases.delete');
 
 });
 
