@@ -69,7 +69,50 @@
                         </div> <!-- // end row  -->
 
                     </div> <!-- End card-body -->
+
+                    <!-- Tabel -->
+                    <div class="card-body">
+                        <form method="" action="">
+                            @csrf
+                            <table class="table-sm table-bordered table" width=100px style="border-color: #ddd;">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Product</th>
+                                        <th>PSC/KG</th>
+                                        <th>Unit Price</th>
+                                        <th>Description</th>
+                                        <th>Total Price</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody id="addRow" class="addRow">
+
+                                </tbody>
+
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5"></td>
+                                        <td>
+                                            <input type="text" name="estimated_amount" value="0" id="estimated_amount" class="form-control estimated-amount" readonly style="background-color: #ddd
+                                            ">
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-info" id="storeButton">Purchases Store</button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
+
+
             </div> <!-- end col -->
         </div>
 
