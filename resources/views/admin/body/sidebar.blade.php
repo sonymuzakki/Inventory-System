@@ -74,9 +74,21 @@
                                     <span>Manage Purchases</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{ route('purchases.all') }}">All Purchases</a></li>
+                                    <li><a href="{{ route('purchase.all') }}">All Purchases</a></li>
+                                    <li><a href="{{ route('purchase.pending') }}">Approval Purchase</a></li>
                                 </ul>
                             </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="ri-mail-send-line"></i>
+                                    <span>Manage Invoice</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{ route('invoice.all') }}">All Invoice</a></li>
+                                    <li><a href=" ">Approval Invoice</a></li>
+
+                                </ul>
 
                             <li class="menu-title">Pages</li>
 

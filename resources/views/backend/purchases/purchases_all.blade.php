@@ -9,7 +9,10 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Purchases All</h4>
+                    <h4 class="mb-sm-0">Purchase All</h4>
+
+
+
                 </div>
             </div>
         </div>
@@ -20,54 +23,63 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <a href="{{ route('purchases.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;">Add Purchases </a><br></br>
+                        <a href="{{ route('purchase.add') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style="float:right;">Add Purchase </a> <br>  <br>
 
-                        <h4 class="card-title">Purchases All Data </h4>
+                        <h4 class="card-title">Purchase All Data </h4>
+
 
                         <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
-                            <tr>
-                                <th width= "5%">Sl</th>
-                                <th>Purchases No</th>
-                                <th>Date</th>
-                                <th>Supplier</th>
-                                <th>Category</th>
-                                <th>Qty</th>
-                                <th>Product Name</th>
-                                <th>Status</th>
-                                <th width= "10%">Action</th>
-
+                                <tr>
+                                    <th>Sl</th>
+                                    <th>Purhase No</th>
+                                    <th>Date </th>
+                                    <th>Supplier</th>
+                                    <th>Category</th>
+                                    <th>Qty</th>
+                                    <th>Product Name</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                             </thead>
+                                <tbody>
 
-                            <tbody>
-                                @foreach($purchases as $key => $item)
-                            <tr>
-                                <td> {{ $key+1}} </td>
-                                <td> {{ $item->purchases_no }} </td>
-                                <td> {{ $item->date }} </td>
-                                <td> {{ $item['supplier']['name'] }} </td>
-                                <td> {{ $item['category']['name'] }} </td>
-                                <td> {{ $item->qty }} </td>
-                                <td> {{ $item['product']['name'] }} </td>
-                                <td> {{ $item->status }} </td>
-                                <td>
-                                    <a href="{{ route('purchases.edit', $item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
+                                    @foreach($purchases as $key => $item)
+                                    <tr>
+                                        <td> {{ $key+1}} </td>
+                                        <td> {{ $item->purchase_no }} </td>
+                                        <td> {{ date('d-m-Y',strtotime($item->date)) }} </td>
+                                        <td> {{ $item['supplier']['name'] }} </td>
+                                        <td> {{ $item['category']['name'] }} </td>
+                                        <td> {{ $item->buying_qty }} </td>
+                                        <td> {{ $item['product']['name'] }} </td>
+                                        <td>
+                                             @if($item->status == '0')
+                                             <span class="btn btn-warning">Pending</span>
+                                             @elseif($item->status == '1')
+                                             <span class="btn btn-success">Approved</span>
+                                             @endif
+                                        </td>
 
-                                    <a href="{{ route('purchases.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
-                                </td>
+                                        <td>
 
-                            </tr>
-                            @endforeach
+                                        {{-- <a href="{{ route('purchase.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a> --}}
 
-                            </tbody>
+                                        @if($item->status == '0')
+                                        <a href="{{ route('purchase.delete',$item->id) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
+                                        @endif
+
+                                        </td>
+
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
                         </table>
 
                     </div>
                 </div>
             </div> <!-- end col -->
         </div> <!-- end row -->
-
-
 
     </div> <!-- container-fluid -->
 </div>

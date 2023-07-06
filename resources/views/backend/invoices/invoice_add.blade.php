@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Add Purchase  </h4><br><br>
+                        <h4 class="card-title">Add Invoice  </h4><br><br>
 
                         <div class="row">
                             <div class="col-md-4">
