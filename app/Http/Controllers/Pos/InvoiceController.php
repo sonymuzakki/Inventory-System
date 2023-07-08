@@ -17,9 +17,31 @@ class InvoiceController extends Controller
     }
 
     public function invoiceAdd(Request $request){
-        $supplier = Supplier::all();
-        $unit = Unit::all();
         $category = Category::all();
-        return view('backend',compact('supplier','unit','category'));
+        $invoice_data = invoice::orderBy('id','desc')->first();
+        if($invoice_data == null){
+            $firstReq = '0';
+            $invoice_no = $firstReq+1;
+        }else{
+            $invoice_data = invoice::orderBy('id','desc')->first();
+            $invoice_no = $invoice_data+1;
+        }
+        $date = date('Y-m-d');
+        return view('backend.invoices.invoice_add',compact('invoice_no','category','date'));
     }
+
+    // public function invoiceStore (Request $request){
+    //     if ($request->category_id == null ) {
+    //         $notification = array(
+    //             'message' => 'Sorry you do not select any item',
+    //             'alert-type' => 'error'
+    //         );
+    //         return redirect()->back()->($notification);
+    //     } else {
+
+    //         $count_category = count($re)
+    //     }
+    // }
+
+
 }
