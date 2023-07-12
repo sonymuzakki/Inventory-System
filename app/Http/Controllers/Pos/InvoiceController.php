@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 
 class InvoiceController extends Controller
 {
@@ -18,6 +19,7 @@ class InvoiceController extends Controller
 
     public function invoiceAdd(Request $request){
         $category = Category::all();
+        $costomer = Customer::all();
         $invoice_data = invoice::orderBy('id','desc')->first();
         if($invoice_data == null){
             $firstReq = '0';
@@ -27,7 +29,7 @@ class InvoiceController extends Controller
             $invoice_no = $invoice_data+1;
         }
         $date = date('Y-m-d');
-        return view('backend.invoices.invoice_add',compact('invoice_no','category','date'));
+        return view('backend.invoices.invoice_add',compact('invoice_no','category','date','costomer'));
     }
 
     // public function invoiceStore (Request $request){

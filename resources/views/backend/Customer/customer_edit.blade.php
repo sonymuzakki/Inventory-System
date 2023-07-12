@@ -36,6 +36,14 @@
 
 
                         <div class="row mb-3">
+                            <label for="example-text-input" class="col-sm-2 col-form-label">Mobile No</label>
+                            <div class="form-group col-sm-10">
+                                <input name="mobile_no" class="form-control" type="text" value="{{ $customer->mobile_no }}" >
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-form-label">customer Address </label>
                             <div class="form-group col-sm-10">
                                 <input name="address" class="form-control" type="text" value="{{ $customer->address }}" >

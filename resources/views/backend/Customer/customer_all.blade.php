@@ -32,6 +32,7 @@
                                 <th>Customer Image</th>
                                 <th>Email</th>
                                 <th>Address</th>
+                                <th>Mobile No</th>
                                 <th>Action</th>
 
                             </thead>
@@ -44,6 +45,7 @@
                                 <td> <img src="{{ asset( $item->customer_image ) }}" style="width:60px; height:50px">  </td>
                                 <td> {{ $item->email }} </td>
                                 <td> {{ $item->address }} </td>
+                                <td> {{ $item->mobile_no }} </td>
                                 <td>
                                     <a href="{{ route('customer.edit', $item->id) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 
